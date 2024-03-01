@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/admin.panel.css" rel="stylesheet">
+    <title>Painel de admin</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="header">
+                <h2>Painel do Admin</h2>
+                <a href="/">Voltar</a>
+            </div>
+
+
+            <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
+                <input type="text" name="admin_titulo" placeholder="Titulo da Noticia..." />
+                <input type="file" name="file" />
+                <input type="text" name="admin_categoria" placeholder="Categoria da Noticia..." />
+                <input type="text" name="admin_autor" placeholder="Autor da Noticia..." />
+                <input type="text" name="admin_slug" placeholder="Slug..." />
+                <textarea name="admin_conteudo" placeholder="Noticia..."></textarea>
+                <input type="submit" name="acao" value="Enviar" />
+            </form>
+
+            <div class="header">
+                <h2>Lista de noticias</h2>
+            </div>
+
+            <% for(let i=0 ;i < posts.length; i++) { %>
+                
+                <div class="noticia-single">
+                    <img src="<%= posts[i].imagem %>" width="75">
+                    <p><%= posts[i].titulo %></p>
+                    <a  href="/admin/delete/<%= posts[i].id %>">x</a>
+                </div>
+            <% } %>
+
+
+        </div><!--container-->
+    </section>
+</body>
+
+</html>

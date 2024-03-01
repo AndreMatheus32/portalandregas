@@ -1,0 +1,65 @@
+
+
+.busca{
+    width: 100%;
+    min-height: 700px;
+    padding: 140px 0;
+}
+
+.busca-header{
+    color: white;
+    text-align: center;
+    background-color: #0e6ba8;
+    padding: 10px 0;
+    margin-bottom:25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+}
+
+.busca-wraper{
+    width: 100%;
+}
+.busca-wraper a{
+    text-decoration: none;
+    color: black;
+}
+.busca-single-img{
+    width: 30%;
+}
+.busca-single{
+    display: flex;
+    align-items: center;
+}
+.busca-single h4{
+    font-weight: 600;
+    margin: 10px 0;
+    font-style: italic;
+    color: #0e6ba8;
+}
+
+
+
+.busca-single-img img{
+    width: 80%;
+}
+
+@media screen and (max-width: 530px){
+    .busca{
+        padding:140px 0 ;
+    }
+    .busca-single{
+        display: block;
+        text-align: center;
+    }
+    .busca-single-img{
+        width: 80%;
+        margin: 0 auto;
+
+    }
+    .busca-single-img img{
+        width: 100%;
+    }
+
+
+
+}

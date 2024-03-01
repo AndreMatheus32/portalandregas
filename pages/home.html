@@ -1,0 +1,68 @@
+<%- include('./partials/header.html')%>
+    <section class="section-1">
+        <div class="container">
+            <div class="chamada">
+                <div class="layer"></div>
+                <img src="<%= posts[0].imagem %>">
+                <div class="chamada-text">
+                    <a href="<%= posts[0].slug %>">
+                        <h2>
+                            <%= posts[0].titulo%>
+                        </h2>
+                        <p>
+                            <%= posts[0].descricaoCurta %>...
+                        </p>
+                    </a>
+                </div><!--chamda-text-->
+            </div><!--chamada-->
+        </div><!--container-->
+    </section><!--section-1-->
+
+    <section class="section-2-noticias">
+        <h2>Ùltimas Publicações</h2>
+        <div class="container">
+            <div class="noticias">
+                <div class="ultimas">
+
+                    <% for(let i=1 ;i < posts.length; i++) { %>
+
+                        <div class="n1">
+                            <img src="<%= posts[i].imagem %>" />
+                            <br />
+                            <div class="n1-text">
+                                <h3>
+                                    <%= posts[i].titulo %>
+                                </h3>
+                                <p><%- posts[i].descricaoCurta %>...</p>
+                                <a class="saiba-mais" href="<%= posts[i].slug %>">Saiba Mais</a>
+
+                            </div><!--n1-text-->
+                        </div><!--n1-->
+                        <% } %>
+                </div><!--ultimas-->
+
+                <div class="mais-lidas">
+                    <h3>AS MAIS LIDAS</h3>
+                    <div class="mais-lidas-wraper">
+                        <% for(let i=0;i < postsTop.length;i++) { %>
+                            <a href="<%= postsTop[i].slug %>" class="mais-lidas-single">
+                                <div class="mais-lidas-img"
+                                    style="background-image: url('<%= postsTop[i].imagem %>');"></div>
+                                <div class="mais-lidas-text">
+                                    <span><%= postsTop[i].titulo %></span>
+                                    <p><%- postsTop[i].descricaoCurta %>...</p>  
+                                </div><!--mais-lidas-text-->
+                            </a><!--mais-lidas-single-->
+                        <% } %>
+                    </div><!--mais-lidas-wraper-->
+                </div><!--mais-lidas-->
+            </div><!--noticias-->
+
+        </div><!--container-->
+    </section><!--section-2-noticias-->
+
+    <%- include('./partials/footer.html')%>
+
+        </body>
+
+        </html>

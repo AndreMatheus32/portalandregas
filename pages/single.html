@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="/public/styles.css" rel="stylesheet">
+    <title>Portal de Noticias</title>
+</head>
+
+<body>
+    <header>
+            <div class="header-container">
+                <a href="/"><img src="/public/images/9.png"></a>
+                <div class="header-form">
+                    <div class="clear"></div>
+                </div><!--header-container-->
+        </div>
+    </header>
+
+    <section class="noticia-principal-single">
+        <div class="container">
+            <div class="noticia-single">
+                <h2>
+                    <%= noticia.titulo %>
+                </h2>
+                <img src="<%= noticia.imagem %>">
+                <div class="autor-nome">
+                    <span>
+                        Por <%= noticia.autor %>
+                    </span>
+                </div>
+                <p><%- noticia.conteudo %></p>
+            </div><!--noticia-single-->
+
+            <div class="mais-lidas">
+                <h3>AS MAIS LIDAS</h3>
+                <div class="mais-lidas-wraper">
+                    <% for(let i=0;i < postsTop.length;i++) { %>
+                        <a href="<%= postsTop[i].slug %>" class="mais-lidas-single">
+                            <div class="mais-lidas-img" style="background-image: url('<%= postsTop[i].imagem %>');">
+                            </div>
+                            <div class="mais-lidas-text">
+                                <span>
+                                    <%= postsTop[i].titulo %>
+                                </span>
+                                <p><%- postsTop[i].descricaoCurta %>...</p>
+
+                            </div><!--mais-lidas-text-->
+                        </a><!--mais-lidas-single-->
+                        <% } %>
+                </div><!--mais-lidas-wraper-->
+            </div><!--mais-lidas-->
+        </div><!--container-->
+    </section>
+
+
+    <%- include('./partials/footer.html')%>
